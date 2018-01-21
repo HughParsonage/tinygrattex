@@ -1,8 +1,8 @@
 language: r
 
-sudo: true
 pandoc: false
 latex: false
+sudo: false
 cache:
   - packages
   - /tmp/texlive
