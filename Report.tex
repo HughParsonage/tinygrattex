@@ -42,14 +42,14 @@ All material published or otherwise created by Grattan Institute is licensed und
 
 
 \begin{overview}
-This is the overview. 
+This is the overview.
 The word \textbf{Overview} appears in the contentspage at \verb=\contentspage= as an unnumbered entry.
-The gap between the overview heading and the overview text should be the same as in regular chapters. 
+The gap between the overview heading and the overview text should be the same as in regular chapters.
 Set over two columns, the first and last baseline of the text in each column have the same vertical positions.
 
 (But only if the overview is large enough!
 If the text is too brief, the algorithm might prefer some other arrangement.
-This is unlikely.) 
+This is unlikely.)
 
 The first line of the overview starts at a fixed vertical position but the height of the text is determined by the constraint of matching the baselines.
 In particular if the overview is too large, it will overflow the page.
@@ -57,7 +57,7 @@ In particular if the overview is too large, it will overflow the page.
 Footnotes are not permitted in the overview.
 
 Note that neither \LaTeX{} nor any other checks will stop or even warn you if the overview text overflows the bottom margin.
-This is probably something that I could do, but it's not really my fault if you're that inattentive\dots . 
+This is probably something that I could do, but it's not really my fault if you're that inattentive\dots .
 \end{overview}
 
 \begin{recommendations}
@@ -68,19 +68,19 @@ Some text under a recommendation.
 \contentspage
 
 \chapter{Chapter title}\label{chap:example}
-This demonstrates the markup commands for sectioning. 
+This demonstrates the markup commands for sectioning.
 If you want to cross-reference a chapter/section/\etc\ later, you need to add a label, as on the line two lines (in the source) above this, and throughout.
 Although \LaTeX{} doesn't require it, every label must have a specific prefix followed by a colon, as throughout this document.
 Furthermore, every chapter must be labelled, even if it is never referenced.
 
-To refer to a chapter, use \Chapref{chap:example}, % not \Vref{chap:example}, 
+To refer to a chapter, use \Chapref{chap:example}, % not \Vref{chap:example},
 otherwise the hyperlink points to the baseline of the first text of the chapter, rather than the chapter title.
 To refer to a chapter range, \Chaprefrange{chap:example}{chap:citations}.
 
 Hugh forgot that you want to use the word `appendix', not `chapter' when referring to a chapter-level heading in the appendix.
 If you can see this text, that bug should be fixed.
-Thanks to Carmela for filing. 
-For a bit more information about appendices, see \Chapref{chap:appendices} on \vpageref{chap:appendices}. 
+Thanks to Carmela for filing.
+For a bit more information about appendices, see \Chapref{chap:appendices} on \vpageref{chap:appendices}.
 
 (Do you see what we did there?
 Sometimes you might want to refer something on a page not connected to a heading or caption,\footnote{Known generally as `counters'.} such as a paragraph in the middle of a section.
@@ -92,13 +92,13 @@ This command is safe in one important respect: it will expand to `on this page',
 \section{Section title}\label{sec:example}
 \subsection{Subsection title}\label{subsec:example}
 \subsubsection{Sub-subsection title}\label{subsubsec:example}
-Some text in one paragraph. 
-Some text in one paragraph. 
-Some text in one paragraph. 
+Some text in one paragraph.
+Some text in one paragraph.
+Some text in one paragraph.
 
-Some text in the next paragraph. 
-Some text in the next paragraph. 
-Some text in the next paragraph. 
+Some text in the next paragraph.
+Some text in the next paragraph.
+Some text in the next paragraph.
 
 Since single newlines are ignored, put different sentences on different lines.
 
@@ -178,60 +178,60 @@ Contents of very smallbox.
 
 A paragraph with a footnote.
 
-Some text in a very small box. 
-Some text in a very small box. 
-Some text in a very small box. 
+Some text in a very small box.
+Some text in a very small box.
+Some text in a very small box.
 \end{verysmallbox}
 
 \begin{smallbox}{A small box}{box:example}
-A smallbox. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
+A smallbox.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
 Some text in a small box.%
 \footnote{Footnote entry.}
 
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-
-
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
 Some text in a small box.
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
 
 Some text.%
-\footnote{All footnotes must end with a full stop.} 
+\footnote{All footnotes must end with a full stop.}
 Some other text.%
 \footnote{(Or a closing parenthesis, which itself must be preceded by a full stop.)}
-To refer to a footnote, use footnote~\ref{fn:example} \vpageref{fn:example}, rather than \Vref{fn:example} which will link to a different counter; 
+To refer to a footnote, use footnote~\ref{fn:example} \vpageref{fn:example}, rather than \Vref{fn:example} which will link to a different counter;
 the label command \emph{must} be inside the footnote.%
 \footnote{\label{fn:example}For example, refer here.}
 \end{smallbox}
@@ -240,7 +240,7 @@ A cross-reference to \Vref{fig:2nd-example-figure}, with a different cross-refer
 
 \phantomsection\label{paragraph:sentence-ending-periods}
 If a sentence ends with a capital letter, you must use backslash-@ immediately before the full stop.
-Many governments have tried to change the GST\@. 
+Many governments have tried to change the GST\@.
 But few have succeeded.
 
 \begin{figure}
@@ -298,7 +298,7 @@ But nothing the copy said could convince her and so it didn't take long until a 
 \end{bigbox*}
 
 \chapter{Citations}\label{chap:citations}
-The database is contained in a .bib file.\footnote{A footnote.} 
+The database is contained in a .bib file.\footnote{A footnote.}
 Citations to appear in-line with the text are inserted like: \textcite{Daley-etal-2016-SAPTO}.
 Citations to appear in a footnote use the structure of this sentence.\footcite{Daley-etal-2016-Assessing-2016-super-tax-reforms}
 To refer to a page number: \textcite[][30]{Daley-etal-2016-SAPTO}.
@@ -308,9 +308,9 @@ Use the plural forms of these commands to cite multiple works (\textcites{Pikett
 Square brackets / optional arguments are placed before the key.\footcites{AtkinsonStiglitz1976}[][42]{MirrleesAdamBesleyEtAl2011}
 
 
-You can include a document in the bibliography without it appearing in the main matter: \nocite{*}.
-The above command cites \emph{all} entries in the document. 
-You should remove this line before compiling. 
+You can include a document in the bibliography without it appearing in the main matter: %\nocite{*}.
+The above command cites \emph{all} entries in the document.
+You should remove this line before compiling.
 
 Some two-author citations: \textcite{Norton2014Doubtfuldebtrising}.\footcites{DuckettBreadon-2014-Unlocking-skills}{Duckett-2016-Premium-policy-getting-more-from-PBS}{Norton2015Universityfeeswhat}{Norton2015cashnexushow}
 
@@ -334,100 +334,100 @@ The copy warned the Little Blind Text, that where it came from it would have bee
 But nothing the copy said could convince her and so it didn't take long until a few insidious Copy Writers ambushed her, made her drunk with Long Tongue and Parole and dragged her into their agency, where they abused her for their pleasure.
 
 \begin{verysmallbox}[p]{This is a long long caption which may be over more than one line}{box:test-two-line-caption}
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
 \end{verysmallbox}
 
 In addition to personal costs, obese people, on average, receive more healthcare than other people, with taxpayers funding most of the costs of those services.
 Obese people also have lower rates of employment, receive more social services payments, and contribute less income tax than people in the normal weight range.
-Together, this foregone tax and additional health and welfare expenses mean that taxpayers are about \$5.3~billion worse off each year. 
+Together, this foregone tax and additional health and welfare expenses mean that taxpayers are about \$5.3~billion worse off each year.
 
 This report calls for a tax on sugar-sweetened beverages.
 We recommend an excise tax of 40 cents per 100 grams of sugar on non-alcoholic, water-based beverages that contain added sugar.
 This will increase the price of a two-litre bottle of soft drink by about 80 cents.
-This tax would raise about \$500~million a year, generate a drop of about 15 per cent in consumption of SSBs and likely result in a small decrease in obesity rates, as people switch to water and other drinks not subject to the tax. 
+This tax would raise about \$500~million a year, generate a drop of about 15 per cent in consumption of SSBs and likely result in a small decrease in obesity rates, as people switch to water and other drinks not subject to the tax.
 
 \chapter{Testing suite 2}\label{chap:test-2}
 The box on the right (\Cref{box:test-one-line-caption}) should have a top-aligned caption (re \#80):
 
 \begin{smallbox}{This is a short caption}{box:test-one-line-caption}
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box. 
-Some other text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some text in a small box. 
-Some other text in a small box.  
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
+Some other text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some text in a small box.
+Some other text in a small box.
 \end{smallbox}
 \appendix
 
 \chapter{Appendices and back matter}\label{chap:appendices}
-To start the appendix area, just invoke \verb=\appendix= as above. 
+To start the appendix area, just invoke \verb=\appendix= as above.
 There's nothing else special about it.
 Elements such as glossaries and indexes are not supported by this class file, though can be implemented.
 
-The bibliography is not an appendix, but appears after the appendix. 
+The bibliography is not an appendix, but appears after the appendix.
 
 
 \printbibliography

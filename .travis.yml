@@ -1,7 +1,7 @@
 language: r
 
 sudo: true
-cache: 
+cache:
   - packages
   - /tmp/texlive
   - /$HOME/.texlive
@@ -13,15 +13,9 @@ r_binary_packages:
   - fastmatch
   - stringi
   - Rcpp
-  - tibble
-  - hms
-  - R6
-  - BH
-  - rlang
-  - readr  
   - zoo
 
-r_packages: 
+r_packages:
   - clisymbols
   - crayon
 
@@ -31,38 +25,22 @@ addons:
       - libhunspell-dev
       # - hunspell-en-au Wait :-)
 
-r_binary_packages:
-  - magrittr
-  - data.table
-  - hunspell
-  - fastmatch
-  - testthat
-  - devtools
-  - readr
-  - zoo
-  - crayon
-  - stringi
-  - hutils
-
-r_packages:
-  - clisymbols
-  
-r_github_packages:
-  - HughParsonage/TeXCheckR
-  - HughParsonage/grattanReporter
-
-before_install:
-  - source ./travis/texlive.sh
-  - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch multirow bbding mathastext isomath relsize
-  - tlmgr update --all
-  - sudo apt-get update
-  - sudo apt-get install texlive-bibtex-extra
+#before_install:
+  #- source ./travis/texlive.sh
+  #- tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch multirow bbding mathastext isomath relsize
+  #- tlmgr update --all
+  #- sudo apt-get update
+  #- sudo apt-get install texlive-bibtex-extra
 
 install: echo Installation step #do not remove this line!
 
 before_script:
     # as somehow no biber package is available for ubuntu 12.04 via apt, let's just download it directly
     # - wget "http://downloads.sourceforge.net/project/biblatex-biber/biblatex-biber/0.9.9/binaries/Linux/biber-linux_x86_64.tar.gz"
+    - Rscript -e 'if (!requireNamespace("tinytex", quietly = TRUE)) devtools::install_github("yihui/tinytex")'
+    - Rscript -e 'tinytex::install_tinytex()'
+    - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch multirow bbding mathastext isomath relsize
+
     - wget http://mirrors.ctan.org/biblio/biber/binaries/Linux/biber-linux_x86_64.tar.gz
     - tar xzf biber-linux_x86_64.tar.gz
     - export PATH=$PATH:$PWD
@@ -75,9 +53,9 @@ before_script:
     - Rscript -e 'devtools::install_github("hughparsonage/TeXCheckR")'
     - Rscript -e 'devtools::install_github("hughparsonage/grattanReporter")'
 
-script: 
+script:
   - set -e
-  - for i in *.tex; do pdflatex -interaction=nonstopmode $i > /dev/null 2>&1; done
+  - Rscript -e 'tinytex::pdflatex("Report.tex")'
   - Rscript -e 'library(grattanReporter);checkGrattanReport(compile = TRUE, pre_release = TRUE, .proceed_after_rerun = 3)'
 
 notifications:
