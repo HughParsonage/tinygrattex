@@ -2,6 +2,7 @@ language: r
 
 sudo: true
 pandoc: false
+latex: false
 cache:
   - packages
   - /tmp/texlive
