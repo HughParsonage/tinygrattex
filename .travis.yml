@@ -9,8 +9,29 @@ cache:
   - /home/travis/.TinyTeX
 warnings_are_errors: false
 
+git:
+  depth: 3
 
-#before_install:
+
+
+before_install:
+  - Rscript -e 'if (!requireNamespace("Rcpp", quietly = TRUE)) install.packages("Rcpp")'
+  - Rscript -e 'if (!requireNamespace("zoo", quietly = TRUE)) install.packages("zoo")'
+  - Rscript -e 'if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")'
+  - Rscript -e 'if (!requireNamespace("hunspell", quietly = TRUE)) install.packages("hunspell")'
+  - Rscript -e 'if (!requireNamespace("crayon", quietly = TRUE)) install.packages("crayon")'
+  - Rscript -e 'if (!requireNamespace("stringr", quietly = TRUE)) install.packages("stringr")'
+  - Rscript -e 'if (!requireNamespace("fastmatch", quietly = TRUE)) install.packages(c("fastmatch", "knitr"))'
+  - Rscript -e 'if (!requireNamespace("data.table", quietly = TRUE)) install.packages(c("data.table"))'
+  - Rscript -e 'if (!requireNamespace("magrittr", quietly = TRUE)) install.packages(c("magrittr"))'
+  - Rscript -e 'if (!requireNamespace("tinytex", quietly = TRUE)) devtools::install_github("yihui/tinytex")'
+  - Rscript -e 'tinytex::install_tinytex()'
+  - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft tools xpatch multirow bbding mathastext isomath relsize koma-script footmisc xifthen ifmtarg ifmtarg placeins enumitem colortbl helvetic xcolor adjustbox collectbox float cleveref babel-english csquotes xstring
+
+  - wget http://mirrors.ctan.org/biblio/biber/binaries/Linux/biber-linux_x86_64.tar.gz
+  - tar xzf biber-linux_x86_64.tar.gz
+  - export PATH=$PATH:$PWD
+  - tlmgr update biber
   #- source ./travis/texlive.sh
   #- tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch multirow bbding mathastext isomath relsize
   #- tlmgr update --all
@@ -22,23 +43,7 @@ install: echo Installation step #do not remove this line!
 before_script:
     # as somehow no biber package is available for ubuntu 12.04 via apt, let's just download it directly
     # - wget "http://downloads.sourceforge.net/project/biblatex-biber/biblatex-biber/0.9.9/binaries/Linux/biber-linux_x86_64.tar.gz"
-  - Rscript -e 'if (!requireNamespace("Rcpp", quietly = TRUE)) install.packages("Rcpp")'
-  - Rscript -e 'if (!requireNamespace("zoo", quietly = TRUE)) install.packages("zoo")'
-  - Rscript -e 'if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")'
-  - Rscript -e 'if (!requireNamespace("hunspell", quietly = TRUE)) install.packages("hunspell")'
-  - Rscript -e 'if (!requireNamespace("crayon", quietly = TRUE)) install.packages("crayon")'
-  - Rscript -e 'if (!requireNamespace("stringr", quietly = TRUE)) install.packages("stringr")'
-  - Rscript -e 'if (!requireNamespace("tinytex", quietly = TRUE)) devtools::install_github("yihui/tinytex")'
-  - Rscript -e 'tinytex::install_tinytex()'
-  - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft tools xpatch multirow bbding mathastext isomath relsize koma-script footmisc xifthen ifmtarg ifmtarg placeins enumitem colortbl helvetic xcolor adjustbox collectbox float cleveref babel-english csquotes xstring
 
-  - wget http://mirrors.ctan.org/biblio/biber/binaries/Linux/biber-linux_x86_64.tar.gz
-  - tar xzf biber-linux_x86_64.tar.gz
-  - export PATH=$PATH:$PWD
-  - tlmgr update biber
-  - Rscript -e 'if (!requireNamespace("fastmatch", quietly = TRUE)) install.packages(c("fastmatch", "knitr"))'
-  - Rscript -e 'if (!requireNamespace("data.table", quietly = TRUE)) install.packages(c("data.table"))'
-  - Rscript -e 'if (!requireNamespace("magrittr", quietly = TRUE)) install.packages(c("magrittr"))'
   - Rscript -e 'devtools::install_github("hughparsonage/hutils")'
   - Rscript -e 'devtools::install_github("hughparsonage/TeXCheckR")'
   - Rscript -e 'devtools::install_github("hughparsonage/grattanReporter")'
