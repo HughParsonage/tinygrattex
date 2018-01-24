@@ -3,6 +3,9 @@
 # Download script file from GitHub
 #        choco install miktex.portable
 #        refreshenv
+
+image: Visual Studio 2017
+
 init:
   ps: |
         $ErrorActionPreference = "Stop"
