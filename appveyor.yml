@@ -18,7 +18,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  - pdflatex Report.tex
+  - cmd "pdflatex.exe Report.tex"
 
 test_script:
   # - travis-tool.sh run_tests
