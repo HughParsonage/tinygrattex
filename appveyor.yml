@@ -6,7 +6,7 @@ init:
         $ErrorActionPreference = "Stop"
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
-        choco install miktex.install
+        choco install miktex.portable
         refreshenv
 
 install:
@@ -18,7 +18,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  - cmd "pdflatex.exe Report.tex"
+  - where pdflatex
 
 test_script:
   # - travis-tool.sh run_tests
