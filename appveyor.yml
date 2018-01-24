@@ -1,16 +1,10 @@
 # DO NOT CHANGE the "init" and "install" sections below
 
 # Download script file from GitHub
-#        choco install miktex.portable
-#        refreshenv
-
-image: Visual Studio 2017
-
 init:
-  ps: |
-        $ErrorActionPreference = "Stop"
-        Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
-        Import-Module '..\appveyor-tool.ps1'
+   ps:
+       choco install miktex.portable
+       refreshenv
 
 install:
   ps: Bootstrap
@@ -21,13 +15,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  - docker pull miktex/miktex
-  - docker volume create --name miktex
-  - docker run -ti \
-      -v miktex:/miktex/.miktex \
-      -v `pwd`:/miktex/work \
-      miktex/miktex \
-      pdflatex Report.tex
+  - & 'pdflatex Report.tex'
 
 test_script:
   # - travis-tool.sh run_tests
