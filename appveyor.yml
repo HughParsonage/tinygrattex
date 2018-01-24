@@ -16,7 +16,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  - Rscript -e "install.packages('tinytex', repos = 'https://cran.rstudio.com/');tinytex::install_tinytex()"
+  - Rscript -e "install.packages('tinytex', repos = 'https://cran.rstudio.com/');tinytex::install_tinytex();tinytex::pdflatex('Report.tex')"
   - travis-tool.sh install_deps
 
 test_script:
