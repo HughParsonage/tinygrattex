@@ -3,9 +3,8 @@ image: Visual Studio 2017
 
 # Download script file from GitHub
 install:
-  ps: |
-        choco install miktex.portable
-        refreshenv
+  - ps: choco install -y miktex
+  - cmd:  refreshenv
 
 cache:
   - C:\RLibrary
@@ -13,7 +12,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  - cmd /c pdflatex Report.tex
+  cmd: pdflatex Report.tex
 
 test_script:
   # - travis-tool.sh run_tests
