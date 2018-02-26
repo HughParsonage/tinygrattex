@@ -12,7 +12,9 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  cmd: pdflatex Report.tex
+  cmd: pdflatex -draftmode Report.tex
+  cmd: biber Report
+  cmd: pdflatex -interaction=batchmode Report.tex
 
 test_script:
   # - travis-tool.sh run_tests
