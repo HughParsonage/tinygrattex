@@ -5,16 +5,20 @@ image: Visual Studio 2017
 install:
   - ps: choco install -y miktex
   - cmd:  refreshenv
+  
+  
 
 cache:
   - C:\RLibrary
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
 
 # Adapt as necessary starting from here
 
 build_script:
-  cmd: pdflatex -draftmode Report.tex
-  cmd: biber Report
-  cmd: pdflatex -interaction=batchmode Report.tex
+  cmd: 
+  - pdflatex -draftmode Report.tex
+  - biber Report
 
 test_script:
   # - travis-tool.sh run_tests
