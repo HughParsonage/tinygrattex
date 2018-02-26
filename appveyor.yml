@@ -16,9 +16,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  cmd: 
-  - pdflatex -draftmode Report.tex
-  - biber Report
+  cmd: pdflatex -draftmode Report.tex
 
 test_script:
   # - travis-tool.sh run_tests
